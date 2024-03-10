@@ -57,18 +57,13 @@
   <script>
     const addQuestionButton = document.getElementById("addQuestion");
     addQuestionButton.addEventListener("click", function() {
-      // Clone the existing container
       const container = document.getElementById("container");
       const newQuestion = container.cloneNode(true);
-
-      // Append the clone to the container wrapper
       const containerWrapper = document.getElementById("container-wrapper");
       containerWrapper.appendChild(newQuestion);
-
-      // Move the button to the bottom after a short delay (simulates animation)
       setTimeout(() => {
         addQuestionButton.parentElement.appendChild(addQuestionButton);
-      }, 100); // Adjust delay if needed
+      }, 100); 
     });
 
   </script>
