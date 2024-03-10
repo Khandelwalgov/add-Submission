@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
+        <title>New Submission</title>
+    </head>
+</head>
+<body>
+  <h2>UPLOAD QUESTIONS</h2>
+  <div id="container-wrapper">
+    <div id="container">
+      <div class="question-container">
+        <label for="Question">Question</label>
+        <textarea class="question-box"></textarea>
+      </div>
+      <div class="marks-container">
+        <label for="marks">Marks</label>
+        <input type="text" class="marks-box">
+      </div>
+      <div class="keywords-container">
+        <label for="keywords">Keywords/Correct answer</label>
+        <textarea class="keywords-box"></textarea>
+      </div>
+    </div>
+    <button type="button" id="addQuestion">New Question</button>
+  </div>
+  <h2>PAPER SETTING</h2>
+  <div class="paperSetting">
+  <label for="AI">Allow AI knowledge:</label>
+  <label class="switch" id="AI">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+  <br/>
+  <label for="justification">Enable viewing justification:</label>
+  <label class="switch" id="justification">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+  <br/>
+  <label for="feedback">Enable viewing AI feedback:</label>
+  <label class="switch" id="feedback">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+</div>
+<br/>
+<h2>UPLOAD PAPER</h2>
+<!--upload paper functoinality here-->
+<div id="container-wrapper">
+    <button type="button" id="submit">Start Evaluation</button>
+</div>
+  <script>
+    const addQuestionButton = document.getElementById("addQuestion");
+    addQuestionButton.addEventListener("click", function() {
+      // Clone the existing container
+      const container = document.getElementById("container");
+      const newQuestion = container.cloneNode(true);
+
+      // Append the clone to the container wrapper
+      const containerWrapper = document.getElementById("container-wrapper");
+      containerWrapper.appendChild(newQuestion);
+
+      // Move the button to the bottom after a short delay (simulates animation)
+      setTimeout(() => {
+        addQuestionButton.parentElement.appendChild(addQuestionButton);
+      }, 100); // Adjust delay if needed
+    });
+
+  </script>
+</body>
+</html>
